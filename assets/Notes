@@ -58,8 +58,35 @@ THEN I am signed out of the site
 16. WHEN I am idle on the site for more than a set time
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 
+Database: techBlog_db
+Tables:
+1. User
+    - id
+    - username
+    - password
+2. Posts
+    - id
+    - title
+    - content
+    - user_id
+3. Comments
+    - id 
+    - content
+    - post_id
+    - user_id
+
+Associations:
+1. Users:
+    *- Can have many Posts
+    *- Can have many Comments
+
+2. Posts:
+    *- Can have one User
+    *- Can have many Comments
+
+3. Comments: 
+    *- Can have one User
+    *- Can have one Post
+
 Things did list for commit comments:
-- Finised Schema.sql
-- Worked model: User.js
-- Worked main.handlebars
-- Utils
+- Finished Models

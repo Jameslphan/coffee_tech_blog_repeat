@@ -1,28 +1,27 @@
-[
-    {
-      "name": "Sal",
-      "email": "sal@hotmail.com",
-      "password": "password12345"
-    },
-    {
-      "name": "Lernantino",
-      "email": "lernantino@gmail.com",
-      "password": "password12345"
-    },
-    {
-      "name": "Amiko",
-      "email": "amiko2k20@aol.com",
-      "password": "password12345"
-    },
-    {
-      "name": "Jordan",
-      "email": "jordan99@msn.com",
-      "password": "password12345"
-    },
-    {
-      "name": "Blake",
-      "email": "the_blake@yahoo.com",
-      "password": "password12345"
-    }
-  ]
+const sequelize = require('../config/connection');
+const { User, Post, Comment } = require('../models');
+
+const userData = require('./dataUser.json');
+const postData = require('./dataPost.json');
+const commentData = require('./dataComment.json');
+
+const seedDatabase = async () => {
+  await sequelize.sync({ force: true });
+
+  await User.bulkCreate( userData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  await Post.bulkCreate( postData, {
+    returning: true,
+  });
   
+  await Comment.bulkCreate( commentData, {
+    returning: true,
+  });
+
+  process.exit(0);
+};
+
+seedDatabase();
