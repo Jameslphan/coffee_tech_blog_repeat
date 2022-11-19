@@ -1,0 +1,11 @@
+{{#if posts.length}}
+<section class="mt-5">
+  <h2 class="text-secondary">Post History</h2>
+    {{#each posts as |post|}}
+      {{> dashboard-detail post}}
+    {{/each}}
+
+</section>
+{{/if}}
+
+<button type="submit" class="btn"><a class="link text-secondary" href="/dashboard/new">Add New Post</a></button>

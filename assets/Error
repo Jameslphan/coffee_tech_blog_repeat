@@ -1,0 +1,65 @@
+{
+    "name":"SequelizeDatabaseError",
+    "parent":
+        {
+            "code":"ER_BAD_FIELD_ERROR",
+            "errno":1054,
+            "sqlState":"42S22",
+            "sqlMessage":"Unknown column 'comments.created_id' in 'field list'",
+            "sql":"SELECT 
+                `post`.`id`, 
+                `post`.`title`, 
+                `post`.`content`, 
+                `post`.`created_at`, 
+                `comments`.`id` AS `comments.id`, 
+                `comments`.`content_com` AS `comments.content_com`, 
+                `comments`.`post_id` AS `comments.post_id`, 
+                `comments`.`user_id` AS `comments.user_id`, 
+                `comments`.`created_id` AS `comments.created_id`, 
+                `comments->user`.`id` AS `comments.user.id`, 
+                `comments->user`.`username` AS `comments.user.username`, 
+                `user`.`id` AS `user.id`, 
+                `user`.`username` AS `user.username` FROM `post` AS `post` LEFT OUTER JOIN `comments` AS `comments` ON `post`.`id` = `comments`.`post_id` LEFT OUTER JOIN `user` AS `comments->user` ON `comments`.`user_id` = `comments->user`.`id` LEFT OUTER JOIN `user` AS `user` ON `post`.`user_id` = `user`.`id`;"
+        },
+    "original":
+        {
+            "code":"ER_BAD_FIELD_ERROR",
+            "errno":1054,"sqlState":"42S22",
+            "sqlMessage":"Unknown column 'comments.created_id' in 'field list'",
+            "sql":"SELECT `post`.`id`, `post`.`title`, `post`.`content`, `post`.`created_at`, `comments`.`id` AS `comments.id`, `comments`.`content_com` AS `comments.content_com`, `comments`.`post_id` AS `comments.post_id`, `comments`.`user_id` AS `comments.user_id`, `comments`.`created_id` AS `comments.created_id`, `comments->user`.`id` AS `comments.user.id`, `comments->user`.`username` AS `comments.user.username`, `user`.`id` AS `user.id`, `user`.`username` AS `user.username` FROM `post` AS `post` LEFT OUTER JOIN `comments` AS `comments` ON `post`.`id` = `comments`.`post_id` LEFT OUTER JOIN `user` AS `comments->user` ON `comments`.`user_id` = `comments->user`.`id` LEFT OUTER JOIN `user` AS `user` ON `post`.`user_id` = `user`.`id`;"
+        },
+    "sql":"SELECT `post`.`id`, `post`.`title`, `post`.`content`, `post`.`created_at`, `comments`.`id` AS `comments.id`, `comments`.`content_com` AS `comments.content_com`, `comments`.`post_id` AS `comments.post_id`, `comments`.`user_id` AS `comments.user_id`, `comments`.`created_id` AS `comments.created_id`, `comments->user`.`id` AS `comments.user.id`, `comments->user`.`username` AS `comments.user.username`, `user`.`id` AS `user.id`, `user`.`username` AS `user.username` FROM `post` AS `post` LEFT OUTER JOIN `comments` AS `comments` ON `post`.`id` = `comments`.`post_id` LEFT OUTER JOIN `user` AS `comments->user` ON `comments`.`user_id` = `comments->user`.`id` LEFT OUTER JOIN `user` AS `user` ON `post`.`user_id` = `user`.`id`;",
+    "parameters":{}
+    }
+
+    
+Executing (default): 
+    SELECT 
+        `sid`, 
+        `expires`, 
+        `data`, 
+        `createdAt`, 
+        `updatedAt` 
+    FROM 
+        `Sessions` 
+    AS 
+        `Session` 
+    WHERE 
+        `Session`.`sid` = 'n-G797O9dqzoZBAywbrJO-tRnoB7l7iN';
+
+Executing (default): 
+    SELECT 
+        `post`.`id`, 
+        `post`.`title`, 
+        `post`.`content`, 
+        `post`.`created_at`, 
+        
+        `comments`.`id` AS `comments.id`, 
+        `comments`.`content_com` AS `comments.content_com`, 
+        `comments`.`post_id` AS `comments.post_id`, 
+        `comments`.`user_id` AS `comments.user_id`, 
+        `comments`.`created_at` AS `comments.created_at`, 
+        `comments->user`.`id` AS `comments.user.id`, 
+        `comments->user`.`username` AS `comments.user.username`, 
+        `user`.`id` AS `user.id`, 
+        `user`.`username` AS `user.username` FROM `post` AS `post` LEFT OUTER JOIN `comment` AS `comments` ON `post`.`id` = `comments`.`post_id` LEFT OUTER JOIN `user` AS `comments->user` ON `comments`.`user_id` = `comments->user`.`id` LEFT OUTER JOIN `user` AS `user` ON `post`.`user_id` = `user`.`id`;
