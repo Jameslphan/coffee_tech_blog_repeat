@@ -9,10 +9,10 @@ Comment.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
       },
       content_com: {
-        type: DataTypes.TEXT
+        type: DataTypes.STRING,
       },
       user_id: {
         type: DataTypes.INTEGER,
