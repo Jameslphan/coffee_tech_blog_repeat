@@ -5,6 +5,9 @@ Tech-Blog is a blog site where users can create an account and post ideas, opini
 
 CT-BR implements the Model View Controller (MVC) structure. Handlebars.js handles the templating engine, MySQL and Sequelize defines the model and interactions. Cookies and session data are used to control access to posts and comments. 
 
+## Deployed Heroku
+https://coffee-tech-blog-repeat.herokuapp.com/
+
 ## Installation
 - Handlebars.js,
 - Express-session,
